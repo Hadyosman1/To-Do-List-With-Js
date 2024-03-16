@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            min-height: 100svh;
+            background-image: linear-gradient( 1turn ,#104d54b9, transparent);
+            background-repeat: no-repeat;
+        }
+        .heading{
+            color:#1c4874;
+            padding: 15px 30px;
+            text-align: center;
+            margin-top: 3svh;
+            font-weight: 800;
+            font-size: 30px;
+        }
+        .heading::first-letter{
+            color: #b06c14;
+            font-size: 40px;
+        }
+        .container{
+            width: 60%;
+            margin: auto;
+        }
+        .form{
+            margin: 3svh auto 0 ;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 20px;
+            background-color: #f5f5f5;
+            border: 3px solid #b06c14;
+            border-radius: 6px;
+        }
+        input[type='text'] , 
+        .form button{
+            padding: 10px 20px;
+            border-radius: 8px;
+            outline: none;
+            border: 2px solid #1c4874;
+            cursor: pointer;
+            font:700 20px Tahoma;
+            transition: background-color .2s linear ;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.333);
+            color: #b06c14;
+        }
+        input[type='text']{
+            flex-grow: 1;
+        }
+        @media screen and (max-width:780px) {
+            input[type='text'] , 
+            .form button{
+                font-size: 16px;
+                width: 100%;
+            }
+            
+        }
+        input[type='text']:focus{
+            box-shadow: 0 0 10px 2px rgba(0, 0, 51, 0.516);
+        }
+        button:hover{
+            background-color: #1c4874;
+        }
+        .tasks{
+            margin: 4svh auto 0 ;
+            padding: 15px 20px;
+            background-color: #e6e5e5;
+            width: 100%;
+            border-radius: 10px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            perspective: 300px;
+        }
+        .task{
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: inherit;
+            font: 700 20px Tahoma;
+            color: #1c4874;
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+        }
+        .task p {
+            word-break: break-all;
+            flex-basis: 85%;
+            padding-inline: 10px;
+        }
+        .task p::first-letter{
+            color: #9d3b02;
+        }
+        .task button{
+            flex-grow: 1;
+            padding: 8px;
+            border-radius: 8px;
+            outline: none;
+            border: 2px solid #d7e2ec;
+            cursor: pointer;
+            font:700 18px Tahoma;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.153);
+            color: #e1dfdc;
+            background-color: rgb(227, 090, 010);
+        }
+        .empty{
+            font-size: 25px;
+            font-weight: 900;
+            color: #b55201;
+            animation: trans 3s linear infinite ;
+            transform-origin: center;
+        }
+        .empty:hover{
+            animation: none;
+        }
+        .empty::after{
+            cursor: pointer;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #1c4874; 
+            content: '\f044';
+            font-size: 30px;
+            margin-inline:  10px;
+            vertical-align: middle;
+        }   
+        @keyframes trans {
+            50%  { transform:translate3d(50px , -10px ,40px); }
+            100% { translate: 0; }
+        }           
+        
+
+    </style>
+</head>
+<body>
+    <h2 class="heading">To Do List</h2>
+    <div class="container">
+            <div class="form">
+                <input type="text" name="" id="">   
+                <button type="button">Add</button>
+            </div>
+            <div class="tasks"></div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
