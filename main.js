@@ -5,9 +5,14 @@ let btnAdd = document.querySelector('.form button');
 let TasksDiv = document.querySelector('.tasks');
 //==========================
 
-let tasksRepo = []; // to store the data from input
+let tasksRepo ; 
+if (window.localStorage.getItem('tasks') != null) {
+    tasksRepo = JSON.parse(localStorage.getItem('tasks')); 
+}else{
+    tasksRepo = [] ; // to store the data from input
+}
 
-tasksRepo = JSON.parse(localStorage.getItem('tasks')); 
+
 
 if (tasksRepo.length == 0) {
     TasksDiv.innerHTML= `
@@ -19,6 +24,7 @@ if (tasksRepo.length == 0) {
     };
 };
 // ==========================
+
 
 if (localStorage.getItem( "tasks" )) {
     tasksRepo.forEach((e,i) => {
@@ -44,7 +50,7 @@ if (localStorage.getItem( "tasks" )) {
 
 btnAdd.addEventListener('click',()=>{
     
-    if (inputToDo.value.length > 1) {
+    if (inputToDo.value.length > 1  ){
         let val = inputToDo.value;
 
         let task ={
